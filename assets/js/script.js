@@ -1,0 +1,1 @@
+console.log("Love Maths logged")
