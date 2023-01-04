@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
             }
-        })
+        });
     }
     runGame("addition");
-})
+});
 
 /**
  * The main game "loop", called when the script is first loaded
@@ -26,7 +26,7 @@ function runGame(gameType) {
         displayAdditionQuestion(num1, num2);
     } else {
         alert(`Unknown game type: ${gameType}`);
-        throw `Unknown game type: ${gameType}. Aborting!;`
+        throw `Unknown game type: ${gameType}. Aborting!;`;
     }
     
 }
@@ -62,14 +62,13 @@ function calculateCorrectAnswer() {
 
 
 function incrementScore() {
-    let oldScore = parseInt(getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
-
+    let oldScore = parseInt(document.getElementById("score").textContent);
+    document.getElementById("score").textContent = oldScore + 1;
 }
 
 function incrementWrongAnswer() {
-    let oldScore = parseInt(getElementById("incorrect").innerText);
-    document.getElementById("incorrect").innerText = ++oldScore;
+    let oldScore = parseInt(document.getElementById("incorrect").textContent);
+    document.getElementById("incorrect").textContent = oldScore + 1;
 }
 
 function displayAdditionQuestion(operand1, operand2) {
